@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffefae;
+    margin: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+h1{
+    text-align: center;
+}
+img{
+    width:100%;
+}
+
+.container{
+    margin: auto;
+    padding: 20px;
+}
+
+
+.btn{
+  cursor: pointer;
+  background-color: darksalmon; 
+  border:none;
+  padding: 8px; 
+  font-size: 16px;
+  color:white;
+  border-radius: 5px;
+}
+
+.btn:active{
+    transform:scale(0.98)
+}
+
+.btn:focus,
+select:focus{
+    outline: mone;
+}
+.toggle{
+    display: block;
+    margin:auto;
+    margin-bottom: 20px;
+}
+
+.text-box{
+    width:70%;
+    position: absolute;
+    background-color:black;
+    top:30%;
+    left:50%;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+ color:white;
+    transform: translate(-50%,-800px);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    margin:0;
+
+    transition: all 0.5s ease-out;
+z-index: 100;
+}
+
+.text-box.show{
+    transform: translate(-50%,0);
+}
+.text-box select,
+.text-box textarea{
+    width:100%;
+    background-color: darksalmon;
+    border:none;
+    height: 30px;
+    margin: 0;
+}
+.text-box textarea{
+    padding: 8px;
+    margin: 15px 0;
+height: 150px;
+border-radius: 5px;
+font-size: 16px;
+background-color: white;
+
+}
+.text-box .btn{
+    display: block;
+    width: 100%;
+}
+
+.text-box .close{
+    color:white;
+    margin:0;
+    padding: 0;
+    float: right;
+    text-align: right;
+    cursor: pointer;
+    font-size: 25px;
+   
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+.box{
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: ivory;
+    transition: box-shadow 0.5s ease-in;
+    cursor: pointer;
+}
+.box-active{
+    box-shadow: 0 0 10px 5px darksalmon;
+}
+.box img{
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
+
+@media (max-width:1200px){
+    main{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media (max-width:760px){
+    main{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:500px){
+    main{
+        grid-template-columns: repeat(1 , 1fr);
+    }
+}
